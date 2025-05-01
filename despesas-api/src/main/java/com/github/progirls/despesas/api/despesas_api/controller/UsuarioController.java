@@ -17,24 +17,16 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.GetMapping;
-=======
 import org.springframework.web.bind.annotation.PatchMapping;
->>>>>>> e1ed690eb6bc1f71162243fbab181248bf39d8fe
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("api/v1/usuarios")
 public class UsuarioController {
-<<<<<<< HEAD
     
     private final UsuarioService usuarioService;
-=======
-
-    private UsuarioService usuarioService;
->>>>>>> e1ed690eb6bc1f71162243fbab181248bf39d8fe
 
     private UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
@@ -58,14 +50,7 @@ public class UsuarioController {
             return ResponseEntity.badRequest().body("Erro inesperado: " + e.getMessage());
         }
     }
-
-<<<<<<< HEAD
-    @GetMapping
-    public ResponseEntity<List<Usuario>> pegarUsuarios() {
-        return ResponseEntity.status(200).body(usuarioService.listarUsuarios());
-    }
     
-=======
     @Operation(summary = "Atualizar a senha do usuário",
 
             description = "Este endpoint permite que o usuário altere sua senha. " +
@@ -82,5 +67,4 @@ public class UsuarioController {
         return ResponseEntity.ok().body("Senha alterada com sucesso!");
     }
 
->>>>>>> e1ed690eb6bc1f71162243fbab181248bf39d8fe
 }
